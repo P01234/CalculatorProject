@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    border: 0;
+    padding:0;
+    box-sizing: border-box;
+    overflow-x:hidden;
+}
+#main_Section{
+    display:block;
+    text-align:center;
+    font-weight: 500;
+    padding: 15px;
+    border-bottom: black 2px solid;
+    background-image: url(/images/buchOfMath.jpg);
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+#main_Section, header, h1{
+    color:#fff;
+}
+#mainContainer{
+    /*background-image: url(/images/MathBunch.jpg);*/
+    background-color: aqua;
+    background-size:cover;
+    background-repeat: no-repeat;
+    height:100vh;
+}
+#calculator_Place{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    margin-top: 18%;
+    height: 500px;
+    width: 100%;
+}
+#calculator{
+    
+    border:black 1px solid;
+    background-color: black;
+    border-radius: 20px;
+    height: 400px;
+
+    
+}
+#calculatorTop{
+    background-color:aqua;
+}
