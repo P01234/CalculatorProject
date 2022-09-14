@@ -53,12 +53,16 @@
     background-color: rgb(119, 255, 255);
 }
 #calculatorHead{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     height: 70px;
     padding: 5px;
     background-color: black;
     width:100%;
 }
 #calculatorHead input{
+    text-align:right;
     height: 40px;
     width:100%;
     background-color: grey;
