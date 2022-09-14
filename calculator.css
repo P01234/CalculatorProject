@@ -11,12 +11,27 @@
     font-weight: 500;
     padding: 15px;
     border-bottom: black 2px solid;
-    background-image: url(/images/buchOfMath.jpg);
+    background-image: url(/images/Neon.jpg);
     background-size:100%;
     background-repeat: no-repeat;
 }
 #main_Section, header, h1{
-    color:#fff;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        1px 0 151px #ff52e2;
+}
+#main_Section h1{
+    border: 5px solid #fff;
+    border: 6px solid #fff;
+    border-radius: 2rem;
+    padding: 0.4em;
+    box-shadow: 0 0 .2rem #fff,
+                0 0 .2rem #fff,
+                inset 0 0 3.5rem #290c0c,
+                inset 0 0 4rem #7c2d7c;
 }
 #mainContainer{
     display:flex;
@@ -40,9 +55,8 @@
     display:flex;
     justify-content: center;
     justify-items: center;
-    border:black 1px solid;
+    border:black 7px solid;
     border-radius: 20px;
-    background-color: black ;
 
     
 }
@@ -50,7 +64,9 @@
 #calculatorTop{
     height: 410px;
     width:300px;
-    background-color: rgb(119, 255, 255);
+    background-image: url(/images/anotherNeon.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 #calculatorHead{
     display:flex;
@@ -58,15 +74,25 @@
     align-items: center;
     height: 70px;
     padding: 5px;
-    background-color: black;
+    background-image: url(/images/neon.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: solid 5px black;
     width:100%;
 }
 #calculatorHead input{
     text-align:right;
     height: 40px;
     width:100%;
-    background-color: grey;
-    border: solid 3px black;
+    padding: 15px;
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    box-shadow: 0 0 .2rem #fff,
+                0 0 .2rem rgb(255, 255, 255),
+                0 0 2rem #06f7ff,
+                0 0 0.8rem #360241,
+                0 0 2.8rem #3b023b,
+                inset 0 0 1.3rem #1b0130;
 }
 #buttons{
     display: flex;
@@ -81,6 +107,13 @@
     margin: 4px;
     width: 55px;
     height: 40px;
-    box-shadow: grey 5px 11px ;
-    border: 5px solid black;
+    box-shadow: grey 2px 2px 0.5px;
+    border: 2px solid black;
+}
+#buttons button:hover{
+    transform: scale(1.1);
+}
+#Other button{
+    width: 100px;
+    padding: 5px;
 }
