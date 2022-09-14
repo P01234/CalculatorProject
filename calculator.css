@@ -19,9 +19,12 @@
     color:#fff;
 }
 #mainContainer{
-    /*background-image: url(/images/MathBunch.jpg);*/
-    background-color: aqua;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/images/MathBunch.jpg);
     background-size:cover;
+    background-position-x: center;
     background-repeat: no-repeat;
     height:100vh;
 }
@@ -29,20 +32,51 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
     margin-top: 18%;
-    height: 500px;
+    height: 100%;
     width: 100%;
 }
 #calculator{
-    
+    display:flex;
+    justify-content: center;
+    justify-items: center;
     border:black 1px solid;
-    background-color: black;
     border-radius: 20px;
-    height: 400px;
+    background-color: black ;
 
     
 }
+
 #calculatorTop{
-    background-color:aqua;
+    height: 410px;
+    width:300px;
+    background-color: rgb(119, 255, 255);
+}
+#calculatorHead{
+    height: 70px;
+    padding: 5px;
+    background-color: black;
+    width:100%;
+}
+#calculatorHead input{
+    height: 40px;
+    width:100%;
+    background-color: grey;
+    border: solid 3px black;
+}
+#buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+    
+}
+#buttons button{
+    margin: 4px;
+    width: 55px;
+    height: 40px;
+    box-shadow: grey 5px 11px ;
+    border: 5px solid black;
 }
