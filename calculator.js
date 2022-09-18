@@ -1,4 +1,6 @@
 const buttons = Array.from(document.getElementsByClassName("button"));
+let prevValue = "";
+let actualValue = "";
 //get every item  defined as a class named button, by using it one can make a array out of those nodes
 whichDidIPress()
 function whichDidIPress()   {
@@ -21,7 +23,10 @@ function getInputFunc(inputReceive) {
    let displayContent = document.querySelector("#getInput").value += inputReceive ;
     return validateDisplay(displayContent);
 }
-
-function validateDisplay(displayContent){
-  
+function validateDisplay(analiseDisplay){
+    let toArray = Array(analiseDisplay);
+    if(analiseDisplay && toArray == "+"){
+    toArray.pop();
+    }
+    console.log(toArray);
 }
