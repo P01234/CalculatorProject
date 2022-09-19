@@ -1,32 +1,51 @@
-const buttons = Array.from(document.getElementsByClassName("button"));
-let prevValue = "";
-let actualValue = "";
-//get every item  defined as a class named button, by using it one can make a array out of those nodes
-whichDidIPress()
-function whichDidIPress()   {
-buttons.forEach(button => {
-    button.addEventListener("click", () =>
-    {   //get a lot of inputs
+const getNumbers = Array.from(document.getElementsByClassName("button"));
+const getOperator = Array.from(document.getElementsByClassName("operator"));
+let previouslyNumber = Array("");
+let actualNumber = Array("");
+let usingOperator = "";
+let nGet = ""
+let usingOperator2 = undefined;
+let getDisplay = document.querySelector("#getInput").value
 
-        arrayResult = button.textContent
-        return getInputFunc(arrayResult);
+
+let getNumber = function(){
+    getNumbers.forEach(button =>{
+        button.addEventListener("click", () => {
+            previouslyNumber = button.textContent;
+            nGet = actualNumber += previouslyNumber;
+            //return nGet to another function.
+            return validateEverything(previouslyNumber, actualNumber)
+        })
     })
-})
+}
+getNumber()
+//to break when operator shows up. 
+/*
+if(previouslyNumber == '+'){
+                usingOperator == previouslyNumber;
+                previouslyNumber == "";
+            }
+            usingOperator2 = parseFloat(usingOperator);
+            console.log(usingOperator2) HappyFace!
+*/
+
+let getOperatorSim = function(){
+    getOperator.forEach(operator =>{
+        operator.addEventListener("click", () =>{
+            usingOperator = operator.textContent; 
+            
+        })
+    })
 }
 
-function getInputFunc(inputReceive) {
-    //concatenates the value + the giving input
-    if(inputReceive == 'DELETE'){
-        inputReceive = "";
-        document.querySelector("#getInput").value = "" ;
+function validateEverything( pastN, nowN){
+    console.log(usingOperator + "\n" + pastN + "\n" + nowN)
+    if(usingOperator = "+"){
+        
+        nowN = pastN
+        pastN = ""
+        getDisplay = document.querySelector("#getInput").value = nowN + "+" + pastN;
     }
-   let displayContent = document.querySelector("#getInput").value += inputReceive ;
-    return validateDisplay(displayContent);
-}
-function validateDisplay(analiseDisplay){
-    let toArray = Array(analiseDisplay);
-    if(analiseDisplay && toArray == "+"){
-    toArray.pop();
-    }
-    console.log(toArray);
+     
+    
 }
