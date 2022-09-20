@@ -80,11 +80,12 @@
     border-bottom: solid 5px black;
     width:100%;
 }
-#calculatorHead input{
+#calculatorHead p{
+    background-color:#fff;
     text-align:right;
-    height: 40px;
+    height: 50px;
     width:100%;
-    padding: 15px;
+    padding: 10px;
     border: 0.2rem solid #fff;
     border-radius: 2rem;
     box-shadow: 0 0 .2rem #fff,
