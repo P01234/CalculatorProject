@@ -2,17 +2,20 @@ const numbers = Array.from(document.querySelectorAll("[data-number]"));
 const operator = document.querySelectorAll("[data-operator]");
 let operandGetter = "";
 let operatorCheck = false;
+let operatorValue1;
 const leftPharentsis = document.querySelector("[data-open]");
 const rightPharentisis = document.querySelector("[data-close]");
 const persentageButton = document.querySelector("[data-percentage]");
 const deleteButton = document.querySelector("[data-delete]");
 let display
+let firstOperandHolder;
+let secondOperandHolder;
 //get operator number and set the boolean which will be used to get the second input.
 let selectOperator = (operatorGetter) =>{
-    let operatorValue = operatorGetter;
+    operatorValue1 = operatorGetter;
     operatorCheck = false;
-    return validateMath(operatorValue);
 }
+
 //get user's input and send it to display.
 let getOperand = (operand) =>{
     operandGetter = operand
@@ -24,7 +27,8 @@ let getDisplay = (displayOperand) =>{
     {
         display = document.querySelector("#getInput").textContent = displayOperand
     operatorCheck = true;
-    let firstOperandHolder = display;
+    operandHolder = displayOperand
+    firstOperandHolder = operandHolder
     }else if(displayOperand === "DELETE")
     {
         operandGetter = ""
@@ -34,15 +38,25 @@ let getDisplay = (displayOperand) =>{
     }else
     {
         display = document.querySelector("#getInput").textContent += displayOperand
-        let secondOperandHolder = display;
+        secondOperandHolder = display;
         console.log(secondOperandHolder)
+        
+    }if(displayOperand === "="){
+        return validateMath(operatorValue1, firstOperandHolder,secondOperandHolder)
     }
 }
 
-let validateMath = (mathValidator) =>{
+let validateMath = (mathValidator, firstOperandHolder,secondOperandHolder) =>{
+    let firstValue = parseFloat(firstOperandHolder);
+    let secondValue = parseFloat(secondOperandHolder);
+    console.log(firstValue)
+    console.log(secondValue)
+    let result;
     switch(mathValidator){
-
-    }
+        case"+": result = firstValue + secondValue; 
+        case"-": result = firstValue + secondValue;
+   }
+   console.log(result);
 }
 numbers.forEach(button => {
     button.addEventListener("click", () => {
