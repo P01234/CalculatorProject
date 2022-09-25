@@ -15,19 +15,20 @@
     </div>
     <div id="mainContainer">
         <section>
+            <div id="secondInput"><p id="getSecondInput"></p></div>
             <div id="calculator_Place">
                 <section>
                     <div id="calculator">
                         <div id="calculatorTop">
                             <div id="calculatorHead">
-                                <p id="getInput"></p>
+                                <p id="getFirstInput"></p>
                             </div>
                             <div id="buttons">
                                 <div class="buttonStyle">
-                                    <button class ="operator" data-open value = "(" id="first">(</button>
-                                    <button class ="operator" data-close id="second">)</button>
+                                    <button class = "operator" data-operator id="squareButton">^</button>
+                                    <button class = "specialButton" data-round id="roundButton">Round</button>
                                     <button class ="operator" data-pecentage id="percentage">%</button>
-                                    <button class="button" data-number id="delete">DELETE</button>
+                                    <button data-number id="delete">DELETE</button>
                                 </div>
                                 <div class="buttonStyle">
                                     <button class="button" data-number id="seven">7</button>
@@ -49,13 +50,9 @@
                                 </div>
                                 <div class="buttonStyle">
                                     <button class="button" id="zero">0</button>
-                                    <button class="button" id="dot">.</button>
-                                    <button class="specialButton" data-number id="equals">=</button>
+                                    <button class="button">,</button>
+                                    <button id="equals">=</button>
                                     <button class ="operator" data-operator id="plus">+</button>
-                                </div>
-                                <div id="Other">
-                                    <button class = "operator" data-operator id="squareButton">^</button>
-                                    <button class = "specialButton" data-round id="roundButton">Round</button>
                                 </div>
                             </div>
                         </div>

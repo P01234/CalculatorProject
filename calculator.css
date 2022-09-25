@@ -80,7 +80,7 @@
     border-bottom: solid 5px black;
     width:100%;
 }
-#calculatorHead p{
+#calculatorHead #getFirstInput{
     background-color:#fff;
     text-align:right;
     height: 50px;
@@ -95,13 +95,31 @@
                 0 0 2.8rem #3b023b,
                 inset 0 0 1.3rem #1b0130;
 }
+#secondInput{
+    display:flex;
+    padding:10px;
+    height:auto;
+    color:#fff;
+    width:100%;
+    justify-content: center;
+    align-items:center;
+}
+#secondInput #getSecondInput{
+    text-align:center;
+    width:100%;
+    font-size: 25px;
+    font-weight: 100;
+}
 #buttons{
     display: flex;
+    flex-wrap: wrap;
+    flex:1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px;
     margin: 5px;
+    height: auto;
     
 }
 #buttons button{
@@ -118,4 +136,6 @@
     width: 100px;
     padding: 5px;
 }
-
+#secondInput{
+    font-size:10px;
+}
