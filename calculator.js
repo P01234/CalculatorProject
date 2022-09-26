@@ -1,16 +1,16 @@
 let operator = "";
 let previousValue = "";
 let currentValue = "";
-let actual;
 document.addEventListener("DOMContentLoaded", function(){
     let numbers = document.querySelectorAll(".button");
     let operators = document.querySelectorAll(".operator")
     let currentNumber = document.querySelector("#getFirstInput");
     let previousNumber = document.querySelector("#getSecondInput");
+    let currentValueHolder;
     let equals = document.querySelector("#equals").addEventListener("click", operate);
     let roundButton = document.querySelector("#roundButton");
     let deleteNumber = document.querySelector("#delete").addEventListener("click", deleteAll);
-
+    
     let defineOpe = function(operatorGet){
         operator = operatorGet;
     }
@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function(){
     let getNumber = function(number){
         currentValue = number;
         if(operator === ""){
-        currentNumber.textContent += currentValue;
+            currentValueHolder = currentNumber.textContent += currentValue;
         }else if(currentNumber.textContent.includes(".")){
-            currentNumber.textContent += currentNumber + ","
+            currentValueHolder = currentNumber.textContent += currentValue + ","
         }
         else{
             displayUpdate();
@@ -31,20 +31,22 @@ document.addEventListener("DOMContentLoaded", function(){
 
     let displayUpdate = function(){
         if(previousValue === ""){
+            previousNumber.textContent += currentValueHolder;
             previousValue = currentValue;
             currentValue = "";
-            previousNumber.textContent = currentNumber.textContent+operator;
+            currentNumber.textContent = currentValueHolder+operator;
         }else if(previousValue !== ""){
-            previousValue = "";
             previousValue = currentValue;
+            console.log("PAPAGAIO!")
             currentValue = "";
-            previousNumber.textContent += `${previousValue}`;
+            currentNumber.textContent += `${previousValue}`;
         }
     }
 
     function operate(){
         let firstValue = parseFloat(currentNumber.textContent);
-        let secondValue = parseFloat(previousNumber.textContent);
+        let secondValue = parseFloat(previousValue);
+        console.log(firstValue + "alface!" + secondValue)
         let result;
         switch(operator){
             case"+":
@@ -74,8 +76,5 @@ document.addEventListener("DOMContentLoaded", function(){
             getNumber(defineNumber.textContent);
         })
     });
-
-    console.log(operator)
-
 
 });
