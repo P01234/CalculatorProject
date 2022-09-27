@@ -1,6 +1,7 @@
 let operator = "";
 let previousValue = "";
 let currentValue = "";
+let result;
 document.addEventListener("DOMContentLoaded", function(){
     let numbers = document.querySelectorAll(".button");
     let operators = document.querySelectorAll(".operator")
@@ -8,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let previousNumber = document.querySelector("#getSecondInput");
     let currentValueHolder;
     let equals = document.querySelector("#equals").addEventListener("click", operate);
-    let roundButton = document.querySelector("#roundButton");
+    let roundButton = document.querySelector(".specialButton").addEventListener("click", roundResult);
     let deleteNumber = document.querySelector("#delete").addEventListener("click", deleteAll);
     
     let defineOpe = function(operatorGet){
@@ -52,38 +53,43 @@ document.addEventListener("DOMContentLoaded", function(){
     function operate(){
         let firstValue = parseFloat(currentNumber.textContent);
         let secondValue = parseFloat(previousNumber.textContent);
-        let result;
         switch(operator){
             case"+":
                 result = firstValue + secondValue;
                 currentNumber.textContent = result;
-                break;
+                return roundResult(result);
             case"-":
                 result = firstValue - secondValue;
                 currentNumber.textContent = result;
-                break;
+                return roundResult(result);
             case"/":
                 result = firstValue / secondValue;
                 currentNumber.textContent = result;
-                break;
+                return roundResult(result);
             case"x": 
                 result = firstValue * secondValue; 
                 currentNumber.textContent = result;
-                break;
+                return roundResult(result);
             case"^":
                 result = firstValue ** secondValue;
                 currentNumber.textContent = result;
-                break;
+                return roundResult(result);
             case"%":
                 result = firstValue % secondValue;
                 currentNumber.textContent = result;
-                break;
+                return roundResult(result);
             default:
                 result = firstValue + secondValue;
                 currentNumber.textContent = result;
-                break;
+                return roundResult(result);
 
         } 
+    }
+
+    function roundResult(rounder){
+        let a = Math.round(rounder);
+        let numberRounded = parseFloat(a);
+        currentNumber.textContent = numberRounded;
     }
 
     function deleteAll(){
@@ -92,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function(){
         currentValue = "";
         currentNumber.textContent = "";
         previousNumber.textContent = "";
+        result = "";
 
     }
 
