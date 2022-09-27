@@ -20,40 +20,70 @@ document.addEventListener("DOMContentLoaded", function(){
         if(operator === ""){
             currentValueHolder = currentNumber.textContent += currentValue;
         }else if(currentNumber.textContent.includes(".")){
-            currentValueHolder = currentNumber.textContent += currentValue + ","
+            while(currentNumber.text == ","){
+                currentNumber.textContent = currentValue;
+            }
         }
         else{
-            displayUpdate();
+            display();
         }
     }
 
 
 
-    let displayUpdate = function(){
+    let display = function(){
         if(previousValue === ""){
-            previousNumber.textContent += currentValueHolder;
             previousValue = currentValue;
             currentValue = "";
             currentNumber.textContent = currentValueHolder+operator;
-        }else if(previousValue !== ""){
-            previousValue = currentValue;
-            console.log("PAPAGAIO!")
-            currentValue = "";
-            currentNumber.textContent += `${previousValue}`;
+            currentValueHolder = "";
+        }else{
+            displayUpdate();
         }
+        
+    }
+
+    let displayUpdate = function(){
+        previousValue = currentValue;
+        currentValue = "";
+        previousNumber.textContent += `${previousValue}`;
     }
 
     function operate(){
         let firstValue = parseFloat(currentNumber.textContent);
-        let secondValue = parseFloat(previousValue);
-        console.log(firstValue + "alface!" + secondValue)
+        let secondValue = parseFloat(previousNumber.textContent);
         let result;
         switch(operator){
             case"+":
-                result = firstValue + secondValue
+                result = firstValue + secondValue;
                 currentNumber.textContent = result;
+                break;
             case"-":
-        }
+                result = firstValue - secondValue;
+                currentNumber.textContent = result;
+                break;
+            case"/":
+                result = firstValue / secondValue;
+                currentNumber.textContent = result;
+                break;
+            case"x": 
+                result = firstValue * secondValue; 
+                currentNumber.textContent = result;
+                break;
+            case"^":
+                result = firstValue ** secondValue;
+                currentNumber.textContent = result;
+                break;
+            case"%":
+                result = firstValue % secondValue;
+                currentNumber.textContent = result;
+                break;
+            default:
+                result = firstValue + secondValue;
+                currentNumber.textContent = result;
+                break;
+
+        } 
     }
 
     function deleteAll(){
