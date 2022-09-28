@@ -1,3 +1,4 @@
+
 let operator = "";
 let previousValue = "";
 let currentValue = "";
@@ -20,10 +21,6 @@ document.addEventListener("DOMContentLoaded", function(){
         currentValue = number;
         if(operator === ""){
             currentValueHolder = currentNumber.textContent += currentValue;
-        }else if(currentNumber.textContent.includes(".")){
-            while(currentNumber.text == ","){
-                currentNumber.textContent = currentValue;
-            }
         }
         else{
             display();
@@ -38,7 +35,8 @@ document.addEventListener("DOMContentLoaded", function(){
             currentValue = "";
             currentNumber.textContent = currentValueHolder+operator;
             currentValueHolder = "";
-        }else{
+        }
+        else{
             displayUpdate();
         }
         
@@ -56,38 +54,38 @@ document.addEventListener("DOMContentLoaded", function(){
         switch(operator){
             case"+":
                 result = firstValue + secondValue;
-                currentNumber.textContent = result;
-                return roundResult(result);
+                currentNumber.textContent = result.toFixed(2);
+                break;
             case"-":
                 result = firstValue - secondValue;
-                currentNumber.textContent = result;
-                return roundResult(result);
+                currentNumber.textContent = result.toFixed(2);
+                break;
             case"/":
                 result = firstValue / secondValue;
-                currentNumber.textContent = result;
-                return roundResult(result);
+                currentNumber.textContent = result.toFixed(2);
+                break;
             case"x": 
                 result = firstValue * secondValue; 
-                currentNumber.textContent = result;
-                return roundResult(result);
+                currentNumber.textContent = result.toFixed(2);
+                break;
             case"^":
                 result = firstValue ** secondValue;
-                currentNumber.textContent = result;
-                return roundResult(result);
+                currentNumber.textContent = result.toFixed(2);
+                break;
             case"%":
                 result = firstValue % secondValue;
-                currentNumber.textContent = result;
-                return roundResult(result);
+                currentNumber.textContent = result.toFixed(2);
+                break;
             default:
                 result = firstValue + secondValue;
-                currentNumber.textContent = result;
-                return roundResult(result);
+                currentNumber.textContent = result.toFixed(2);
+                break;
 
         } 
     }
 
-    function roundResult(rounder){
-        let a = Math.round(rounder);
+    function roundResult(){
+        let a = Math.round(result);
         let numberRounded = parseFloat(a);
         currentNumber.textContent = numberRounded;
     }
